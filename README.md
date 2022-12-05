@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# ToDo Application with React JS
+![My Image](/public/images/todos-min.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+ToDo application created with React JS. Users have possibility to create, edit, delete,
+check and uncheck todos.
 
-In the project directory, you can run:
+## Services
 
-### `npm start`
+# Login
+![My Image](/public/images/login-min.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This service is initialized with two users, which can be used for immediate testing:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- borko@abv.bg: 123456
+- gabi@abv.bg: 123456
 
-### `npm test`
+# Register
+![My Image](/public/images/register-min.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create a new user by entered email, password and confirmation password.
 
-### `npm run build`
+# Create
+![My Image](/public/images/todos-min.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When user enter his task and click on Add New Task button, users todo will show
+on the top of ToDo list constainer.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Edit
+![My Image](/public/images/edit-min.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When user click on edit icon on given todo he have possibility to edit this todo.
+After click on Edit Task button todo will be edited.
 
-### `npm run eject`
+# Delete
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+When user click on a trash icon on given todo this todo will be deleted. When user
+click on checkbox given todo will be scratched/unscrached. When user click on Delete
+Done Tasks button all scratched todos will be deleted. Whene user click on Delete All
+Tasks button all todos will be deleted.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Logout
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+When user click on logout icon his session has expired.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Guest Users
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Guest users can see only login and register pages.
