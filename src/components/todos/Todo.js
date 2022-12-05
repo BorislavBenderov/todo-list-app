@@ -1,6 +1,6 @@
 import { DeleteTodo } from "./DeleteTodo";
 
-export const Todo = ({ todo }) => {
+export const Todo = ({ todo, onEditHandler }) => {
     return (
         <div className="todo">
             <div className="todo__title">
@@ -9,7 +9,7 @@ export const Todo = ({ todo }) => {
             <div className="todos__btns">
                 <label htmlFor="check"></label>
                 <input type="checkbox" name="check" id="check" />
-                <button>x</button>
+                <button onClick={() => onEditHandler(todo.id)}>x</button>
                 <DeleteTodo todoId={todo.id}/>
             </div>
         </div>
