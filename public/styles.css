@@ -92,7 +92,8 @@ input:focus {
 }
 
 .auth__form input,
-.auth__form textarea {
+.auth__form textarea,
+.add__todo__form input {
     margin-bottom: 10px;
     padding: 5px 10px;
     border-radius: 8px;
@@ -108,7 +109,10 @@ input:focus {
     font-size: small;
 }
 
-.auth__form button {
+.auth__form button,
+.add__todo__form button,
+.todolist__btns button,
+.delete__tasks button {
     background-color: rgba(17, 17, 255, 0.527);
     color: white;
     font-weight: 600;
@@ -131,4 +135,46 @@ input:focus {
 .auth__action a {
     color: rgba(17, 17, 255, 0.527);
     font-weight: 600;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 10px auto;
+}
+
+.add__todo {
+    text-align: center;
+}
+
+.add__todo__form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.todolist h1 {
+    text-align: center;
+}
+
+.todolist__btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete__tasks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 5px;
 }
