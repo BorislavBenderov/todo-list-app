@@ -29,7 +29,7 @@ export const Todo = ({ todo, onEditHandler }) => {
                     onChange={() => setIsCkecked(!todo.checked)}
                     onClick={onChangeCheck}
                 />
-                <button onClick={() => onEditHandler(todo.id)}>x</button>
+                <i className="fa fa-pencil-square-o" aria-hidden="true" onClick={() => onEditHandler(todo.id)}></i>
                 <DeleteTodo todoId={todo.id} />
             </div>
         </div>

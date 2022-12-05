@@ -7,6 +7,6 @@ export const DeleteTodo = ({ todoId }) => {
     }
 
     return (
-        <button onClick={onDeleteTodo}>x</button>
+        <i className="fa fa-trash" aria-hidden="true" onClick={onDeleteTodo}></i>
     );
 }

@@ -33,7 +33,12 @@ export const CreateTodo = () => {
             <h1>ToDo App</h1>
             <form className="add__todo__form" onSubmit={onCreateTodo}>
                 <label htmlFor="todo"></label>
-                <input type="text" id="todo" name="todo" value={input} onChange={(e) => setInput(e.target.value)} />
+                <input type="text"
+                    id="todo"
+                    name="todo"
+                    placeholder='Add todo'
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)} />
                 <button className="add__todo__btn">Add New Task</button>
             </form>
         </section>
