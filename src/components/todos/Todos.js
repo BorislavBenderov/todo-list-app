@@ -1,8 +1,11 @@
+import { Logout } from "../auth/Logout";
 import { CreateTodo } from "./CreateTodo";
 
 export const Todos = () => {
     return (
+
         <div className="todos">
+            <Logout />
             <CreateTodo />
             <section className="todolist">
                 <h1>ToDo List</h1>
