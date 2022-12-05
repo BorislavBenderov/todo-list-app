@@ -17,7 +17,8 @@ export const CreateTodo = () => {
 
         addDoc(collection(database, 'todos'), {
             title: input,
-            uid: loggedUser.uid
+            uid: loggedUser.uid,
+            checked: false
         })
             .then(() => {
                 setInput('');
