@@ -165,6 +165,10 @@ input:focus {
     justify-content: space-around;
 }
 
+.todolist__btns button:focus {
+    background-color: red;
+}
+
 .delete__tasks {
     display: flex;
     justify-content: space-between;
