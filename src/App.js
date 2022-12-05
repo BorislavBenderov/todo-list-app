@@ -5,6 +5,7 @@ import { AuthContextProvider } from './contexts/AuthContext';
 import { Todos } from './components/todos/Todos';
 import { TodoContextProvider } from './contexts/TodoContext';
 import { Footer } from './components/footer/Footer';
+import { NotFound } from './components/not-found/NotFound';
 import { ProtectedRoutes } from './ProtectedRoutes';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <AuthContextProvider>
         <TodoContextProvider>
           <Routes>
+            <Route path='*' element={<NotFound />} />
             <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route element={<ProtectedRoutes />}>

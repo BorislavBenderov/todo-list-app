@@ -215,6 +215,11 @@ footer {
     padding-top: 10px;
 }
 
+.not-found-info {
+    margin: 200px auto;
+    text-align: center;
+  }
+
 @media screen and (max-width: 520px) {
     .todos {
         width: 300px;
