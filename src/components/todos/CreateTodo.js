@@ -1,4 +1,4 @@
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { database } from '../../firebaseConfig';
@@ -15,10 +15,16 @@ export const CreateTodo = () => {
             return;
         }
 
+        if (input.length > 25) {
+            alert('Todo must be less then 25 characters!');
+            return;
+        }
+
         addDoc(collection(database, 'todos'), {
             title: input,
             uid: loggedUser.uid,
-            checked: false
+            checked: false,
+            timestamp: serverTimestamp()
         })
             .then(() => {
                 setInput('');

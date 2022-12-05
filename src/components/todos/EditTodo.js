@@ -20,6 +20,11 @@ export const EditTodo = ({ todoId, successfulEdit }) => {
             return;
         }
 
+        if (input.length > 25) {
+            alert('Todo must be less then 25 characters!');
+            return;
+        }
+
         updateDoc(doc(database, 'todos', todoId), {
             title: input
         })
