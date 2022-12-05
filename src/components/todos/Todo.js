@@ -1,4 +1,6 @@
-export const Todo = ({todo}) => {
+import { DeleteTodo } from "./DeleteTodo";
+
+export const Todo = ({ todo }) => {
     return (
         <div className="todo">
             <div className="todo__title">
@@ -8,7 +10,7 @@ export const Todo = ({todo}) => {
                 <label htmlFor="check"></label>
                 <input type="checkbox" name="check" id="check" />
                 <button>x</button>
-                <button>x</button>
+                <DeleteTodo todoId={todo.id}/>
             </div>
         </div>
     );
