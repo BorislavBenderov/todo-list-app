@@ -1,14 +1,9 @@
+import { CreateTodo } from "./CreateTodo";
+
 export const Todos = () => {
     return (
         <div className="todos">
-            <section className="add__todo">
-                <h1>ToDo App</h1>
-                <form className="add__todo__form">
-                    <label htmlFor="todo"></label>
-                    <input type="text" id="todo" name="todo" />
-                    <button className="add__todo__btn">Add New Task</button>
-                </form>
-            </section>
+            <CreateTodo />
             <section className="todolist">
                 <h1>ToDo List</h1>
                 <div className="todolist__btns">
