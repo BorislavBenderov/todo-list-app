@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Register = () => {
     return (
         <div className="auth">
@@ -25,7 +27,7 @@ export const Register = () => {
             </div>
             <div className="auth__action">
                 <p>Have an account?</p>
-                <a href="/">Log in</a>
+                <Link to="/">Log in</Link>
             </div>
         </div>
     );

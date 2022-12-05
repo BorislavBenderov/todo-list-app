@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Login = () => {
     return (
         <div className="auth">
@@ -18,7 +20,7 @@ export const Login = () => {
             </div>
             <div className="auth__action">
                 <p>Don't have an account?</p>
-                <a href="/register">Sign up</a>
+                <Link to="/register">Sign up</Link>
             </div>
         </div>
     );
