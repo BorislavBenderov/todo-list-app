@@ -25,8 +25,8 @@ export const Todos = () => {
                     <div className="todos__btns">
                         <label htmlFor="check"></label>
                         <input type="checkbox" name="check" id="check" />
-                        <buttton>x</buttton>
-                        <buttton>x</buttton>
+                        <button>x</button>
+                        <button>x</button>
                     </div>
                 </div>
                 <div className="todo">
@@ -36,8 +36,8 @@ export const Todos = () => {
                     <div className="todos__btns">
                         <label htmlFor="check"></label>
                         <input type="checkbox" name="check" id="check" />
-                        <buttton>x</buttton>
-                        <buttton>x</buttton>
+                        <button>x</button>
+                        <button>x</button>
                     </div>
                 </div>
             </section >
