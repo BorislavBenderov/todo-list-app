@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { browserLocalPersistence, setPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
 
 export const Login = () => {
+    const navigate = useNavigate();
+
     const onLogin = (e) => {
         e.preventDefault();
 
@@ -20,7 +22,7 @@ export const Login = () => {
             .then(() => {
                 signInWithEmailAndPassword(auth, email, password)
                     .then(() => {
-                        console.log('ok');
+                        navigate('/todos');
                     })
                     .catch((err) => {
                         alert(err.message);

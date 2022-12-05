@@ -1,9 +1,11 @@
 import { browserLocalPersistence, createUserWithEmailAndPassword, setPersistence } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth, database } from "../../firebaseConfig";
 
 export const Register = () => {
+    const navigate = useNavigate();
+
     const onRegister = (e) => {
         e.preventDefault();
 
@@ -31,6 +33,7 @@ export const Register = () => {
                             email,
                             uid: res.user.uid
                         });
+                        navigate('/todos');
                     })
                     .catch((err) => {
                         alert(err.message);
