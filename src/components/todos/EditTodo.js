@@ -10,7 +10,7 @@ export const EditTodo = ({ todoId, successfulEdit }) => {
 
     useEffect(() => {
         setInput(currentTodo.title)
-    }, [todoId]);
+    }, [currentTodo.title]);
 
     const onEditTodo = (e) => {
         e.preventDefault();
