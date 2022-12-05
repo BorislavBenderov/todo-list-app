@@ -1,11 +1,48 @@
+import { browserLocalPersistence, createUserWithEmailAndPassword, setPersistence } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import { auth, database } from "../../firebaseConfig";
 
 export const Register = () => {
+    const onRegister = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+
+        const email = formData.get('email');
+        const password = formData.get('password');
+        const repeatPassword = formData.get('repeatPassword');
+
+        if (email === '' || password === '' || repeatPassword === '') {
+            alert('Please fill all fields!');
+            return;
+        }
+
+        if (password !== repeatPassword) {
+            alert('Password and confirmation password dont match');
+            return;
+        }
+
+        setPersistence(auth, browserLocalPersistence)
+            .then(() => {
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((res) => {
+                        setDoc(doc(database, 'users', res.user.uid), {
+                            email,
+                            uid: res.user.uid
+                        });
+                    })
+                    .catch((err) => {
+                        alert(err.message);
+                    })
+            })
+    }
+
     return (
         <div className="auth">
             <div className="auth__container">
                 <h1>ToDo List</h1>
-                <form className="auth__form">
+                <form className="auth__form" onSubmit={onRegister}>
                     <label htmlFor="email" />
                     <input type="text" placeholder="Email" id="email" name="email" />
                     <label htmlFor="password" />
