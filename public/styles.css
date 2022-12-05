@@ -144,8 +144,16 @@ input:focus {
     margin: 10px auto;
 }
 
+.todos__btns {
+    align-items: center;
+}
+
 .add__todo {
     text-align: center;
+}
+
+.add__todo h1 {
+    margin-bottom: 10px;
 }
 
 .add__todo__form {
@@ -154,9 +162,22 @@ input:focus {
     border: 1px solid black;
     padding: 5px;
     border-radius: 8px;
+    background-color: white;
+}
+
+.todos__container {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: white;
 }
 
 .todos__container h1 {
+    text-align: center;
+}
+
+.todos__container p {
     text-align: center;
 }
 
@@ -176,4 +197,19 @@ input:focus {
 
 .logout {
     text-align: end;
+}
+
+.fa {
+    color: black;
+    cursor: pointer;
+}
+
+.fa-pencil-square-o {
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+    .todos {
+        width: 300px;
+    }
 }
