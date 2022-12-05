@@ -1,9 +1,17 @@
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import { TodoContext } from '../../contexts/TodoContext';
 import { Logout } from "../auth/Logout";
 import { CreateTodo } from "./CreateTodo";
+import { Todo } from "./Todo";
 
 export const Todos = () => {
-    return (
+    const { todos } = useContext(TodoContext);
+    const { loggedUser } = useContext(AuthContext);
 
+    const currentUserTodos = todos.filter(todo => todo.uid === loggedUser?.uid);
+
+    return (
         <div className="todos">
             <Logout />
             <CreateTodo />
@@ -16,28 +24,7 @@ export const Todos = () => {
                 </div>
             </section>
             <section className="todos__container">
-                <div className="todo">
-                    <div className="todo__title">
-                        <p>Hello World</p>
-                    </div>
-                    <div className="todos__btns">
-                        <label htmlFor="check"></label>
-                        <input type="checkbox" name="check" id="check" />
-                        <button>x</button>
-                        <button>x</button>
-                    </div>
-                </div>
-                <div className="todo">
-                    <div className="todo__title">
-                        <p>Hello World</p>
-                    </div>
-                    <div className="todos__btns">
-                        <label htmlFor="check"></label>
-                        <input type="checkbox" name="check" id="check" />
-                        <button>x</button>
-                        <button>x</button>
-                    </div>
-                </div>
+                {currentUserTodos.map(todo => <Todo key={todo.id} todo={todo} />)}
             </section >
             <section className="delete__tasks">
                 <button>Delete done tasks</button>
