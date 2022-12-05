@@ -156,17 +156,8 @@ input:focus {
     border-radius: 8px;
 }
 
-.todolist h1 {
+.todos__container h1 {
     text-align: center;
-}
-
-.todolist__btns {
-    display: flex;
-    justify-content: space-around;
-}
-
-.todolist__btns button:focus {
-    background-color: red;
 }
 
 .delete__tasks {
