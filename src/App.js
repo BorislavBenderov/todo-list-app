@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './contexts/AuthContext';
 import { Todos } from './components/todos/Todos';
 import { TodoContextProvider } from './contexts/TodoContext';
+import { Footer } from './components/footer/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
               <Route path='/register' element={<Register />} />
               <Route path='/todos' element={<Todos />} />
             </Routes>
+            <Footer />
           </TodoContextProvider>
       </AuthContextProvider>
     </div>

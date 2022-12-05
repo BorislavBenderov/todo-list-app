@@ -208,6 +208,13 @@ input:focus {
     margin: 0 5px;
 }
 
+footer {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
 @media screen and (max-width: 520px) {
     .todos {
         width: 300px;
