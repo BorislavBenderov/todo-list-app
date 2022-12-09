@@ -4,6 +4,7 @@ import { TodoContext } from "../../contexts/TodoContext";
 import { database } from "../../firebaseConfig";
 
 export const EditTodo = ({ todoId, successfulEdit }) => {
+    const [err, setErr] = useState('');
     const { todos } = useContext(TodoContext);
     const currentTodo = todos.find(todo => todo.id === todoId);
     const [input, setInput] = useState(currentTodo.title);
@@ -16,12 +17,12 @@ export const EditTodo = ({ todoId, successfulEdit }) => {
         e.preventDefault();
 
         if (input === '') {
-            alert('Please add valid todo!');
+            setErr('Please add valid todo!');
             return;
         }
 
         if (input.length > 25) {
-            alert('Todo must be less then 25 characters!');
+            setErr('Todo must be less then 25 characters!');
             return;
         }
 
@@ -32,7 +33,7 @@ export const EditTodo = ({ todoId, successfulEdit }) => {
                 successfulEdit();
             })
             .catch((err) => {
-                alert(err.message);
+                setErr(err.message);
             })
     }
 
@@ -47,6 +48,7 @@ export const EditTodo = ({ todoId, successfulEdit }) => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)} />
                 <button className="add__todo__btn">Edit Task</button>
+                <p className="errors">{err}</p>
             </form>
         </section>
     );

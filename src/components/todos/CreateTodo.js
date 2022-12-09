@@ -4,6 +4,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { database } from '../../firebaseConfig';
 
 export const CreateTodo = () => {
+    const [err, setErr] = useState('');
     const [input, setInput] = useState('');
     const { loggedUser } = useContext(AuthContext);
 
@@ -11,12 +12,12 @@ export const CreateTodo = () => {
         e.preventDefault();
 
         if (input === '') {
-            alert('Please add valid todo!');
+            setErr('Please add valid todo!');
             return;
         }
 
         if (input.length > 25) {
-            alert('Todo must be less then 25 characters!');
+            setErr('Todo must be less then 25 characters!');
             return;
         }
 
@@ -30,7 +31,7 @@ export const CreateTodo = () => {
                 setInput('');
             })
             .catch((err) => {
-                alert(err.message);
+                setErr(err.message);
             })
     }
 
@@ -46,6 +47,7 @@ export const CreateTodo = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)} />
                 <button className="add__todo__btn">Add New Task</button>
+                <p className="errors">{err}</p>
             </form>
         </section>
     );
