@@ -220,6 +220,12 @@ footer {
     text-align: center;
   }
 
+.errors {
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+}
+
 @media screen and (max-width: 520px) {
     .todos {
         width: 300px;
