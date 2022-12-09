@@ -3,7 +3,12 @@ import { database } from "../../firebaseConfig";
 
 export const DeleteTodo = ({ todoId }) => {
     const onDeleteTodo = async () => {
-        await deleteDoc(doc(database, 'todos', todoId));
+        try {
+            await deleteDoc(doc(database, 'todos', todoId));
+        } catch (error) {
+            alert(error.message);
+        }
+
     }
 
     return (
