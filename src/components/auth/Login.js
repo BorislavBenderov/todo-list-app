@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { browserLocalPersistence, setPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
+import { useState } from "react";
 
 export const Login = () => {
+    const [err, setErr] = useState('');
     const navigate = useNavigate();
 
     const onLogin = (e) => {
@@ -14,7 +16,7 @@ export const Login = () => {
         const password = formData.get('password');
 
         if (email === '' || password === '') {
-            alert('Please fill all the fields!');
+            setErr('Please fill all the fields!');
             return;
         }
 
@@ -25,7 +27,7 @@ export const Login = () => {
                         navigate('/todos');
                     })
                     .catch((err) => {
-                        alert(err.message);
+                        setErr(err.message);
                     })
             })
     }
@@ -45,6 +47,7 @@ export const Login = () => {
                         name="password"
                     />
                     <button type="submit">Log In</button>
+                    <p className="errors">{err}</p>
                 </form>
             </div>
             <div className="auth__action">

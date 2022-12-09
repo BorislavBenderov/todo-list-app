@@ -1,9 +1,11 @@
 import { browserLocalPersistence, createUserWithEmailAndPassword, setPersistence } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, database } from "../../firebaseConfig";
 
 export const Register = () => {
+    const [err, setErr] = useState('');
     const navigate = useNavigate();
 
     const onRegister = (e) => {
@@ -16,12 +18,12 @@ export const Register = () => {
         const repeatPassword = formData.get('repeatPassword');
 
         if (email === '' || password === '' || repeatPassword === '') {
-            alert('Please fill all fields!');
+            setErr('Please fill all fields!');
             return;
         }
 
         if (password !== repeatPassword) {
-            alert('Password and confirmation password dont match');
+            setErr('Password and confirmation password dont match');
             return;
         }
 
@@ -36,7 +38,7 @@ export const Register = () => {
                         navigate('/todos');
                     })
                     .catch((err) => {
-                        alert(err.message);
+                        setErr(err.message);
                     })
             })
     }
@@ -63,6 +65,7 @@ export const Register = () => {
                         name="repeatPassword"
                     />
                     <button type="submit">Register</button>
+                    <p className="errors">{err}</p>
                 </form>
             </div>
             <div className="auth__action">
