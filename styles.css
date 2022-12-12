@@ -1,0 +1,233 @@
+/* RESET CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: black;
+}
+
+body {
+    background-color: rgba(173, 216, 230, 0.266);
+    -webkit-font-smoothing: antialiased;
+    font-family: 'roboto', sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+input,
+button,
+select {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+/* MAIN CSS */
+.auth {
+    width: 335px;
+    margin: 50px auto;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.auth__container {
+    background-color: white;
+    padding: 10px 40px 100px 40px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.auth__container h1 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth__form input,
+.auth__form textarea,
+.add__todo__form input {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.auth__form textarea {
+    height: 200px;
+}
+
+.auth__form input::placeholder {
+    font-weight: 500;
+    font-size: small;
+}
+
+.auth__form button,
+.add__todo__form button,
+.todolist__btns button,
+.delete__tasks button {
+    background-color: rgba(17, 17, 255, 0.527);
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.auth__action {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 5px 0;
+}
+
+.auth__action a {
+    color: rgba(17, 17, 255, 0.527);
+    font-weight: 600;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 10px auto;
+}
+
+.todos__btns {
+    align-items: center;
+}
+
+.add__todo {
+    text-align: center;
+}
+
+.add__todo h1 {
+    margin-bottom: 10px;
+}
+
+.add__todo__form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.todos__container {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.todos__container h1 {
+    text-align: center;
+}
+
+.todos__container p {
+    text-align: center;
+}
+
+.delete__tasks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.logout {
+    text-align: end;
+}
+
+.fa {
+    color: black;
+    cursor: pointer;
+}
+
+.fa-pencil-square-o {
+    margin: 0 5px;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+.not-found-info {
+    margin: 200px auto;
+    text-align: center;
+  }
+
+.errors {
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 520px) {
+    .todos {
+        width: 300px;
+    }
+}
