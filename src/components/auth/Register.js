@@ -6,6 +6,7 @@ import { auth, database } from "../../firebaseConfig";
 
 export const Register = () => {
     const [err, setErr] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const onRegister = (e) => {
@@ -27,6 +28,7 @@ export const Register = () => {
             return;
         }
 
+        setLoading(true);
         setPersistence(auth, browserLocalPersistence)
             .then(() => {
                 createUserWithEmailAndPassword(auth, email, password)
@@ -36,9 +38,11 @@ export const Register = () => {
                             uid: res.user.uid
                         });
                         navigate('/todos');
+                        setLoading(false);
                     })
                     .catch((err) => {
                         setErr(err.message);
+                        setLoading(false);
                     })
             })
     }
@@ -64,7 +68,7 @@ export const Register = () => {
                         id="repeatPassword"
                         name="repeatPassword"
                     />
-                    <button type="submit">Register</button>
+                    <button type="submit">{loading ? "Loading..." : "Register"}</button>
                     <p className="errors">{err}</p>
                 </form>
             </div>
